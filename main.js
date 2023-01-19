@@ -79,6 +79,16 @@ const AvgOfAllValues = (obj) =>{
 // returns a new object with all the key-value pairs from the original object,
 // sorted alphabetically by the keys.
 
+const sortAlphabetically = (obj) =>{
+    const sortedKeys = Object.keys(obj);
+    const sortedObj = {};
+    for(const key of sortedKeys){
+        sortedObj[key] = obj[key];
+    }
+    return sortedObj;
+}
+
+
 //9)
 //Use Object.values() and forEach() to check if an object contains a specific name.
 
@@ -104,12 +114,12 @@ console.log(checkIfPersonExist(people,"Mike"));
 
 const wordFrequency = (words) => {
     let wordCounts = {};
-    words.forEach((word) => {
+    for(const word of words){
       if (wordCounts.hasOwnProperty(word.toLowerCase())) {
         wordCounts[word]++;
       } else {
         wordCounts[word.toLowerCase()] = 1;
       }
-    });
+    }
     return wordCounts;
   };
