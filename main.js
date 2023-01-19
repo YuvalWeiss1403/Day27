@@ -115,10 +115,10 @@ console.log(checkIfPersonExist(people,"Mike"));
 const wordFrequency = (words) => {
     let wordCounts = {};
     for(const word of words){
-      if (wordCounts.hasOwnProperty(word.toLowerCase())) {
-        wordCounts[word]++;
+      if (wordCounts[word]) {
+        wordCounts[word]=1;
       } else {
-        wordCounts[word.toLowerCase()] = 1;
+        wordCounts[word]++;
       }
     }
     return wordCounts;
